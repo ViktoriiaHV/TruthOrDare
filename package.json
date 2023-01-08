@@ -1,26 +1,56 @@
 {
-  "name": "truthordare",
-  "version": "1.0.0",
-  "main": "node_modules/expo/AppEntry.js",
-  "scripts": {
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
-  },
-  "dependencies": {
-    "expo": "~47.0.12",
-    "expo-status-bar": "~1.4.2",
-    "react": "18.1.0",
-    "react-dom": "18.1.0",
-    "react-native": "0.70.5",
-    "react-native-web": "~0.18.9"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.9",
-    "@types/react": "~18.0.14",
-    "@types/react-native": "~0.70.6",
-    "typescript": "^4.6.3"
-  },
-  "private": true
+    "name": "truthordare",
+    "version": "1.0.0",
+    "main": "node_modules/expo/AppEntry.js",
+    "scripts": {
+        "start": "expo start",
+        "android": "expo start --android",
+        "ios": "expo start --ios",
+        "web": "expo start --web",
+        "format": "prettier --write .",
+        "precommit": "lint-staged",
+        "prepare": "husky install"
+    },
+    "lint-staged": {
+        "*.{ts,tsx}": [
+            "prettier --write",
+            "eslint",
+            "git add"
+        ]
+    },
+    "dependencies": {
+        "@react-navigation/native": "^6.1.1",
+        "@reduxjs/toolkit": "^1.9.1",
+        "expo": "~47.0.12",
+        "expo-status-bar": "~1.4.2",
+        "native-base": "^3.4.25",
+        "react": "18.1.0",
+        "react-dom": "18.1.0",
+        "react-native": "0.70.5",
+        "react-native-safe-area-context": "4.4.1",
+        "react-native-screens": "~3.18.0",
+        "react-native-svg": "13.4.0",
+        "react-native-web": "~0.18.9",
+        "styled-components": "^5.3.6"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.9",
+        "@types/react": "~18.0.14",
+        "@types/react-native": "~0.70.6",
+        "@types/styled-components": "^5.1.26",
+        "@types/styled-components-react-native": "^5.2.0",
+        "@typescript-eslint/eslint-plugin": "^5.48.0",
+        "@typescript-eslint/parser": "^5.48.0",
+        "eslint": "^8.31.0",
+        "eslint-config-prettier": "^8.6.0",
+        "eslint-plugin-prettier": "^4.2.1",
+        "eslint-plugin-react": "^7.31.11",
+        "eslint-plugin-react-native": "^4.0.0",
+        "eslint-plugin-unused-imports": "^2.0.0",
+        "husky": "^8.0.3",
+        "lint-staged": "^13.1.0",
+        "prettier": "^2.8.2",
+        "typescript": "^4.6.3"
+    },
+    "private": true
 }
